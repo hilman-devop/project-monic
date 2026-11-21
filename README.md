@@ -1,34 +1,59 @@
-# MONIC - Modern Aquaponic Monitoring System 🐟🌱
+# MONIC — Aquaponic IoT Monitoring
 
-**Sistem Monitoring Aquaponik Berbasis IoT** menggunakan Raspberry Pi, sensor DHT22, Ultrasonic, dan integrasi cloud Ubidots.
+![Python](https://img.shields.io/badge/Python-2f81f7?style=flat) ![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-2f81f7?style=flat) ![DHT22](https://img.shields.io/badge/DHT22-2f81f7?style=flat) ![HC-SR04](https://img.shields.io/badge/HC-SR04-2f81f7?style=flat) ![Ubidots](https://img.shields.io/badge/Ubidots-2f81f7?style=flat) ![RPi.GPIO](https://img.shields.io/badge/RPi.GPIO-2f81f7?style=flat)
 
-Proyek ini adalah sistem monitoring real-time untuk instalasi aquaponik modern. Sensor membaca suhu udara, kelembaban udara, dan level air secara otomatis, kemudian data dikirim ke platform Ubidots untuk visualisasi dashboard dan notifikasi.
+> Proyek IoT untuk memantau suhu, kelembapan, dan level air secara berkala pada instalasi aquaponik.
 
-Proyek ini pernah saya ikutkan dalam **kompetisi IoT** dan berhasil menjadi **Best 25 Project**.
+## Tentang proyek
 
-![Monic Image 1](assets/monic1.jpeg)
-![MONIC Image 2](assets/monic2.jpeg)
+Proyek IoT untuk memantau suhu, kelembapan, dan level air secara berkala pada instalasi aquaponik. Dokumentasi ini dibuat sebagai panduan singkat untuk memahami ruang lingkup proyek, menjalankannya secara lokal, dan membaca batasan penggunaannya.
 
-### 🚀 Fitur Utama
-- Pengukuran real-time:
-  - Suhu udara (°C)
-  - Kelembaban udara (%)
-  - Level air tangki (cm)
-- Pengiriman data otomatis ke cloud Ubidots setiap detik
-- Struktur kode modular (sensor terpisah di file `dht22.py`, `ultrasonic.py`, `ldr.py`)
-- Error handling dasar untuk koneksi internet/API
-- Siap dikembangkan lebih lanjut (tambah relay pompa, notifikasi Telegram, dll.)
+## Fitur utama
 
-### 🛠 Hardware yang Digunakan
-- Raspberry Pi (3/4/Zero W rekomendasi)
-- Sensor DHT22 (suhu + kelembaban)
-- Sensor Ultrasonic HC-SR04 (level air)
-- Jumper wires & breadboard
-- Power supply stabil
+- Monitoring suhu dan kelembapan
+- Pengukuran level air dengan ultrasonic
+- Pengiriman telemetri ke cloud
+- Modul sensor terpisah
+- Dirancang untuk pengembangan aktuator pompa dan notifikasi
 
-### 💻 Tech Stack & Library
-- Python 3
+## Teknologi
+
+- Python
+- Raspberry Pi
+- DHT22
+- HC-SR04
+- Ubidots
 - RPi.GPIO
-- Adafruit_DHT
-- Requests (untuk API Ubidots)
-- Modul custom: `dht22.py`, `ultrasonic.py`, `ldr.py`
+
+## Menjalankan secara lokal
+
+Prasyarat dan konfigurasi dapat berbeda menurut sistem operasi. Contoh langkah utama:
+
+```bash
+pip install -r requirements.txt
+python kirim_ubi.py
+```
+
+## Struktur dan pengembangan
+
+Mulai dari entry point dan folder konfigurasi proyek. Pisahkan credential lokal dari source code, tambahkan test untuk perubahan penting, dan gunakan environment variable untuk konfigurasi deployment.
+
+## Keamanan
+
+- Jangan commit API key, password, token, session ID, atau data pribadi.
+- Gunakan file environment lokal dan contoh konfigurasi tanpa nilai rahasia.
+- Uji perubahan pada environment development sebelum deployment.
+
+## Status
+
+Proyek ini merupakan bagian dari portofolio **Hilman Arifin Ilham** dan dapat dikembangkan sesuai kebutuhan penggunaan.
+
+> **Catatan:** Credential Ubidots harus dibuat ulang dan disediakan melalui konfigurasi lokal. Token tidak disimpan di repository publik.
+
+## Lisensi
+
+Belum ada lisensi open-source yang dinyatakan di repository ini. Hubungi pemilik repository sebelum menggunakan ulang atau mendistribusikan kode.
+
+---
+
+Dibuat oleh [Hilman Arifin Ilham](https://github.com/hilman-devop).
