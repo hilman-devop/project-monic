@@ -9,7 +9,7 @@ from ldr import ldr
 
 GPIO.setwarnings(False)
 
-TOKEN = "BBFF-FPSOKQkwzeFWwvw6oimRRRoboLgsNm"  # Put your TOKEN here
+TOKEN = "UBIDOTS_TOKEN_DISINI"  # Put your TOKEN here
 DEVICE_LABEL = "monic-modern-aquaponik"  # Put your device label here 
 VARIABLE_LABEL_1 = "temperature"  # Put your first variable label here
 VARIABLE_LABEL_2 = "humidity"  # Put your second variable label here
